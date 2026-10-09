@@ -1,0 +1,42 @@
+{
+  "v": 3,
+  "assetGroups": {
+    "Logos": {
+      "files": {
+        "dga-logo.webp": {
+          "blob": "33f604c96ec85597f8897d1b65baaea0",
+          "name": "dga-logo.webp",
+          "size": 4702,
+          "type": "image/webp"
+        }
+      },
+      "name": "Logos",
+      "order": [
+        "dga-logo.webp"
+      ],
+      "tile": "l"
+    }
+  },
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-09-29T04:31:28Z",
+    "v": 1
+  },
+  "docs": {
+    "sections": []
+  },
+  "groups": [
+    "Logos"
+  ],
+  "lastChange": {
+    "at": "2026-09-29T04:31:28Z",
+    "by": "Asis Unyapoth",
+    "note": "First version, built from dga.or.th (colours, Prompt type, radii, shadows, logo).",
+    "via": "Claude (Cowork)"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "DGA",
+  "sections": {},
+  "title": "DGA"
+}

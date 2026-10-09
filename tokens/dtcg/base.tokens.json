@@ -1,0 +1,338 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "spacing": {
+    "space-1": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Icon-to-text gaps."
+    },
+    "space-2": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Tight stacks: tag padding, meta rows."
+    },
+    "space-3": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Button vertical padding, list gaps."
+    },
+    "space-4": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Nav item vertical padding (site), card inner gaps."
+    },
+    "space-5": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Nav item horizontal padding (site), button horizontal padding."
+    },
+    "space-6": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Card padding, grid gutters."
+    },
+    "space-8": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Between blocks inside a section."
+    },
+    "space-12": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Section padding on mobile; slide margin minimum."
+    },
+    "space-16": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$description": "Section padding on desktop."
+    },
+    "space-24": {
+      "$type": "dimension",
+      "$value": "96px",
+      "$description": "Hero padding; slide outer margin at 1920x1080."
+    }
+  },
+  "radius": {
+    "radius-sm": {
+      "$type": "dimension",
+      "$value": "6px",
+      "$description": "Buttons, inputs, tags (site value)."
+    },
+    "radius-md": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Cards, images, panels (the site's most common radius)."
+    },
+    "radius-lg": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Hero media, feature panels."
+    },
+    "radius-pill": {
+      "$type": "dimension",
+      "$value": "100px",
+      "$description": "Pills and chips (site value)."
+    },
+    "radius-round": {
+      "$type": "dimension",
+      "$value": "50%",
+      "$description": "Circular icon buttons (carousel arrows, back-to-top)."
+    }
+  },
+  "fontFamily": {
+    "sans": {
+      "$type": "fontFamily",
+      "$value": [
+        "Prompt",
+        "Noto Sans Thai",
+        "system-ui",
+        "sans-serif"
+      ]
+    },
+    "reading": {
+      "$type": "fontFamily",
+      "$value": [
+        "Sarabun",
+        "Prompt",
+        "Noto Sans Thai",
+        "sans-serif"
+      ]
+    }
+  },
+  "typography": {
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "56px",
+        "fontWeight": 600,
+        "lineHeight": "64px"
+      },
+      "$description": "Hero headline, one per page.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "h1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "40px",
+        "fontWeight": 600,
+        "lineHeight": "52px"
+      },
+      "$description": "Page title.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "section-title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "32px",
+        "fontWeight": 600,
+        "lineHeight": "32px"
+      },
+      "$description": "Home-page section headings in orange, exactly as dga.or.th. Line height 1.0 is for ONE line only; wrap to h2 metrics if it breaks.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "h2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "32px",
+        "fontWeight": 600,
+        "lineHeight": "44px"
+      },
+      "$description": "Multi-line section headings.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "h3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "24px",
+        "fontWeight": 600,
+        "lineHeight": "34px"
+      },
+      "$description": "Card and sub-section titles.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "h4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "20px",
+        "fontWeight": 500,
+        "lineHeight": "30px"
+      },
+      "$description": "News-card titles, small headings.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "lineHeight": "24px"
+      },
+      "$description": "Default UI and web copy (site value).",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "nav": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "14.72px",
+        "fontWeight": 500,
+        "lineHeight": "19.872px"
+      },
+      "$description": "Main navigation items (site value).",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "14px",
+        "fontWeight": 500,
+        "lineHeight": "20px"
+      },
+      "$description": "Buttons, tags, form labels.",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "12px",
+        "fontWeight": 400,
+        "lineHeight": "18px"
+      },
+      "$description": "Dates, captions, footnotes (site value).",
+      "$extensions": {
+        "dga.group": "Web"
+      }
+    },
+    "article-lead": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.reading}",
+        "fontSize": "21px",
+        "fontWeight": 400,
+        "lineHeight": "34px"
+      },
+      "$description": "Standfirst under an article title.",
+      "$extensions": {
+        "dga.group": "Article"
+      }
+    },
+    "article-body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.reading}",
+        "fontSize": "18px",
+        "fontWeight": 400,
+        "lineHeight": "32px"
+      },
+      "$description": "Long-form reading text in Sarabun. Max line length ~70 characters (680px).",
+      "$extensions": {
+        "dga.group": "Article"
+      }
+    },
+    "article-quote": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "24px",
+        "fontWeight": 500,
+        "lineHeight": "38px"
+      },
+      "$description": "Pull quotes, in Prompt.",
+      "$extensions": {
+        "dga.group": "Article"
+      }
+    },
+    "slide-hero": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "72px",
+        "fontWeight": 600,
+        "lineHeight": "84px"
+      },
+      "$description": "Title slide headline at 1920x1080.",
+      "$extensions": {
+        "dga.group": "Slides"
+      }
+    },
+    "slide-title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "48px",
+        "fontWeight": 600,
+        "lineHeight": "62px"
+      },
+      "$description": "Content-slide title at 1920x1080.",
+      "$extensions": {
+        "dga.group": "Slides"
+      }
+    },
+    "slide-subtitle": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "30px",
+        "fontWeight": 400,
+        "lineHeight": "44px"
+      },
+      "$description": "Subtitles and kicker lines.",
+      "$extensions": {
+        "dga.group": "Slides"
+      }
+    },
+    "slide-body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "26px",
+        "fontWeight": 400,
+        "lineHeight": "40px"
+      },
+      "$description": "Bullets and body on slides. Never below 24px.",
+      "$extensions": {
+        "dga.group": "Slides"
+      }
+    },
+    "slide-stat": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamily.sans}",
+        "fontSize": "120px",
+        "fontWeight": 700,
+        "lineHeight": "120px"
+      },
+      "$description": "One big number per slide (e.g. Waseda ranking).",
+      "$extensions": {
+        "dga.group": "Slides"
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "manifestVersion": 3,
+  "name": "DGA",
+  "namespace": "DGA",
+  "libraries": [],
+  "components": [
+    {
+      "name": "ArticleBody",
+      "group": "Articles",
+      "summary": "`.dga-prose` is the long-form reading layout for articles, blog posts and news bodies: one 680px column, Sarabun body text and Prompt headings."
+    },
+    {
+      "name": "Badge",
+      "group": "Content",
+      "summary": "A badge is a small pill label for a content category (ข่าว, บทความ, มาตรฐาน) or the status of a project."
+    },
+    {
+      "name": "Button",
+      "group": "Actions",
+      "summary": "Use a button to start an action or go to the next step, with at most one **primary** (orange) button per view."
+    },
+    {
+      "name": "Callout",
+      "group": "Articles",
+      "summary": "A callout sets a key fact or summary box inside an article."
+    },
+    {
+      "name": "Cover"
+    },
+    {
+      "name": "Footer",
+      "group": "Layout",
+      "summary": "The site footer is a full-width `navy` band with the logo on a white plate, contact details and link columns with orange headings."
+    },
+    {
+      "name": "NavBar",
+      "group": "Layout",
+      "summary": "The site header is a white bar with the DGA logo on the left, the main menu on the right and `shadow-sm` beneath."
+    },
+    {
+      "name": "NewsCard",
+      "group": "Content",
+      "summary": "The news and article card from the dga.or.th home page is a 16:9 image, a category badge, a title clamped to three lines, a Thai-calendar date and a \"อ่านต่อ →\" link."
+    },
+    {
+      "name": "SectionHeader",
+      "group": "Layout",
+      "summary": "This is the home-page section heading from dga.or.th: an optional small navy kicker, a 32px orange title and a \"ดูทั้งหมด\" link on the right."
+    },
+    {
+      "name": "ServiceTile",
+      "group": "Content",
+      "summary": "A service tile is an entry point to a major area (Policy & Regulation, Standard, มติคณะรัฐมนตรี, Open Government Data, Citizen Portal), laid out three across as on the home page."
+    },
+    {
+      "name": "SlideContent",
+      "group": "Slides",
+      "summary": "The workhorse content slide has a kicker, a title that states the takeaway, 3–5 bullets and an optional big number or chart on the right, with a footer line and the logo at bottom-right."
+    },
+    {
+      "name": "SlideSection",
+      "group": "Slides",
+      "summary": "The section divider is a full `orange` slide with a large navy section number and title, used between the parts of a long deck."
+    },
+    {
+      "name": "SlideTitle",
+      "group": "Slides",
+      "summary": "The title slide for decks is authored at 1920×1080 on a `navy` ground, with an orange kicker, a white `slide-hero` headline, a subtitle, brand colour blocks at top-right and the logo on a white plate."
+    },
+    {
+      "name": "StatBlock",
+      "group": "Content",
+      "summary": "A stat block shows one headline number with its meaning and source, for reports, web highlights and deck summaries."
+    }
+  ],
+  "lastChange": {
+    "at": "2026-09-29T04:31:28Z",
+    "by": "Asis Unyapoth",
+    "note": "First version, built from dga.or.th (colours, Prompt type, radii, shadows, logo).",
+    "via": "Claude (Cowork)"
+  },
+  "assetGroups": [
+    {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "dga-logo.webp"
+      ],
+      "files": [
+        {
+          "path": "assets/Logos/dga-logo.webp",
+          "id": "33f604c96ec85597f8897d1b65baaea0"
+        }
+      ]
+    }
+  ],
+  "_generatedBy": "build_local_view.py (local snapshot, not the page)"
+}

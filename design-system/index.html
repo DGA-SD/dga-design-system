@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DGA Design System</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components/bundle.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<style>
+body{margin:0;font-family:var(--font-sans,system-ui);background:var(--surface);color:var(--ink);line-height:1.5}
+header{position:sticky;top:0;z-index:2;display:flex;gap:16px;align-items:center;padding:12px 24px;background:var(--navy);color:var(--on-navy)}
+header a{color:var(--on-navy);text-decoration:none;opacity:.85} header a:hover{opacity:1}
+header button{margin-left:auto;padding:6px 12px;border-radius:var(--radius-sm,6px);border:1px solid var(--on-navy);background:transparent;color:var(--on-navy);cursor:pointer}
+main{max-width:1200px;margin:0 auto;padding:24px} section{margin-bottom:48px} h2{border-bottom:1px solid var(--line);padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.tok{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:var(--radius-md,12px);background:var(--surface-subtle)}
+.tok code{font-weight:600} .tok small{display:block;color:var(--ink-muted)} .tok p{margin:4px 0 0;font-size:13px;color:var(--ink-secondary)}
+.sws{display:flex;flex-shrink:0;border-radius:8px;overflow:hidden;border:1px solid var(--line)} .sw{width:28px;height:56px}
+.demo{flex-shrink:0;width:56px;height:56px;background:var(--surface);border:1px solid var(--line)}
+.demo-spacing{background:var(--orange-soft);width:var(--v);min-width:4px;max-width:96px;height:24px}
+.demo-radius{border-radius:var(--v);background:var(--navy)} .demo-shadow{box-shadow:var(--v);border:0}
+.ty{padding:12px 0;border-bottom:1px dashed var(--line)} .ty small{display:block;color:var(--ink-muted);font:12px/18px var(--font-sans)}
+.card{margin:12px 0;border:1px solid var(--line);border-radius:var(--radius-md,12px);overflow:hidden;background:var(--surface)}
+.card-h{padding:8px 12px;background:var(--surface-subtle);font-size:14px} .card-h span{color:var(--ink-muted)}
+.card iframe{display:block;width:100%;border:0;background:var(--surface)}
+.prose{max-width:760px} .prose img{max-width:100%} pre{white-space:pre-wrap}
+</style>
+</head>
+<body>
+<header><b>DGA</b>
+<a href="#overview">Overview</a><a href="#colors">Colors</a><a href="#type">Typography</a><a href="#spacing">Spacing</a><a href="#components">Components</a><a href="#assets">Assets</a>
+<button id="theme">theme: light</button></header>
+<main>
+<p><small>หน้านี้ tokens.css และ manifest.json สร้างจาก tokens.json ด้วย tools/build_local_view.py (ไม่ใช่หน้า claude.ai artifact) ดู SOURCE.md</small></p>
+<section id="overview"><h2>Overview</h2>
+<div class="card"><div class="card-h"><b>Cover</b></div><iframe data-src="components/Cover/preview.html" height="288"></iframe></div>
+<div class="prose" id="readme"><pre>The visual and verbal system of the Digital Government Development Agency (สำนักงานพัฒนารัฐบาลดิจิทัล (องค์การมหาชน) · สพร. · DGA), taken from dga.or.th and the DGA logo. Use it for three surfaces: **presentations**, **articles** and **websites**. Two colours carry the brand, DGA orange and DGA navy, over plenty of white, and everything is set in Prompt.
+
+## Content fundamentals
+
+**Voice.** DGA speaks as a public servant: confident about what it delivers, and warm toward the citizen. Lead with what the person gets, then say which system does it. Real headlines from the site:
+
+- "One Stop Service ใกล้ขึ้น ข้อมูลถึงกัน เอกสารไม่ซ้ำ ประชาชนไม่ต้องถ่ายสำเนา"
+- "เรื่องนี้ต้องแจ้งที่ไหน? เมื่อรัฐออกแบบบริการให้ประชาชนไม่ต้องหาคำตอบเอง"
+- "Digital Government in Action"
+
+**Rules.**
+
+- Write Thai first. English is for section labels that are already English on the site (Policy &amp; Regulation, Standard, Open Government Data) and for international audiences.
+- Name the organisation "DGA" in headlines and "สำนักงานพัฒนารัฐบาลดิจิทัล (องค์การมหาชน) (สพร.)" at first formal mention. Keep product names exactly as written: ทางรัฐ, Citizen Portal, BizPortal, GDX, DG-Link, TDGA, DIGI.
+- Headlines state an outcome or ask the citizen's question. Avoid slogans with no subject.
+- Numbers are concrete and sourced: "58 เอกสารสำคัญ", "อันดับที่ 17 ของโลก (Waseda 2025)". Use Arabic numerals.
+- Buttons and links are short verbs: "อ่านต่อ", "ดูทั้งหมด", "ดาวน์โหลด", "ลงทะเบียน".
+- Formal register (ภาษาราชการที่อ่านง่าย): no slang, no exclamation marks in body copy, and no emoji in any output.
+- Royal and state-mourning announcements follow official protocol and never use brand colours. Set them in greyscale.
+
+## Visual foundations
+
+**Colour.** White `surface` dominates. `navy` and `orange` are the two brand fills; everything else is support.
+
+- Set text in `ink` (navy), secondary copy in `ink-secondary`, and metadata in `ink-muted` (on `surface` or `surface-subtle` only).
+- `orange` (#F05223) is the logo orange. Use it for fills, graphics and headings **24px and larger**. It reads 4.69:1 on `navy`, so orange text on navy is fine at any size. Never use it for small text on white (3.54:1).
+- `orange-strong` (#DA3C0C) is the working orange. Use it for primary buttons, links, active navigation and the `focus` ring. Put labels on it in `on-orange`.
+- Use `navy` blocks for the footer, hero bands, title slides and section dividers, with text in `on-navy`.
+- `orange-soft` tints the active navigation item and highlighted rows.
+- Status colours (`success`, `warning`, `danger`, `info`) always come with a word or icon. `danger` must never be the only thing telling it apart from brand orange.
+- For charts, use `chart-1` (navy) for the main series and `chart-2` (orange) for the one to look at. Add `chart-3` if needed, and put everything else in `chart-muted`. Label series directly rather than with a legend where possible.
+- The **Dark (navy)** theme swaps white for deep navy (`surface` #150F36). Use it for keynote decks and dark website sections; the tokens hold contrast in both themes.
+- No gradients, no purple, and no colour outside these tokens.
+
+**Type.** Everything is set in **Prompt** (Google Fonts, Thai + Latin, weights 400/500/600/700), as on dga.or.th. Long-form article text uses **Sarabun**, the Thai government reading face (an addition: dga.or.th has no long-form style).
+
+- Web: `display` → `h1` → `h2` / `section-title` → `h3` → `h4` → `body` → `label` → `caption`. Use `section-title` (32px, 600, orange) exactly as the home page does, on one line only; Thai marks clip at line-height 1.0 across two lines, so switch to `h2` when it wraps.
+- Articles: `article-lead`, then `article-body` (Sarabun 18/32) at a maximum measure of 680px, with `article-quote` for pull quotes.
+- Slides (1920×1080): `slide-hero`, `slide-title`, `slide-subtitle`, `slide-body` (never below 24px) and `slide-stat` for one big number.
+- Weights: 600 for headings, 500 for navigation and labels, 400 for text. 700 is for `slide-stat` only.
+
+**Spacing and layout.** Use a 4px base (`space-1` … `space-24`).
+
+- Web: content width 1200px, 12 columns with `space-6` gutters, section padding `space-16` (`space-12` on mobile). Service tiles run three across (Policy &amp; Regulation · Standard · มติ ครม.) and news runs three or four across.
+- Slides: outer margin `space-24`, one idea per slide, title at top-left, and the logo bottom-right at 56px tall (except on the title slide).
+- Articles: a single 680px column, centred, with images allowed to break out to 960px.
+
+**Shape and depth.** Buttons and inputs take `radius-sm` (6px), cards and images `radius-md` (12px), feature panels `radius-lg`, chips `radius-pill`, and carousel and back-to-top buttons `radius-round`. Cards lift with `shadow-card` and do not use borders. The primary button gets `shadow-cta` on hover. Menus and dialogs use `shadow-overlay`.
+
+**States.** Hover darkens a fill by one step or raises the shadow. Focus is a 2px solid `focus` ring with a 2px offset, on every interactive element. Disabled elements drop to 40% opacity and have no shadow.
+
+**Imagery.** Use real photography of Thai citizens, officials and DGA events, cropped to `radius-md` corners. Screens of ทางรัฐ and other services appear inside plain device frames. Do not use stock handshake or "digital globe" clichés or AI-generated people.
+
+**Accessibility.** dga.or.th offers text resizing and display modes; keep layouts working at 200% text. Two source values miss WCAG and are kept exact but flagged. `line-strong` on white is 1.8:1, so always label inputs. `orange-strong` on `orange-soft` is 4.22:1, so active navigation text should be 500 weight or heavier and never smaller than `nav`.
+
+## Iconography
+
+- The site uses **Font Awesome** (solid set) for UI icons and small custom SVGs for carousel arrows. Use Font Awesome 6 Free Solid, single-colour, in `ink` or `orange-strong`, at 16/20/24px. Icons appear next to a label, not in place of one.
+- Do not use emoji or Unicode symbols as icons.
+
+## Logo
+
+`assets/Logos/dga-logo.webp` is the official DGA logo (orange "DG" with circuit ends, navy "A", "DIGITAL GOVERNMENT DEVELOPMENT AGENCY" beneath), 339×194, taken from dga.or.th.
+
+- Place it on `surface` (white) only. On navy or photographs, sit it on a white plate with `space-4` padding and `radius-md` corners.
+- Leave clear space around it equal to the height of the "A". Minimum height is 48px on screen and 56px on slides.
+- Never recolour, outline, stretch, rotate or redraw it. There is no reversed (white) version in this system yet; request an official file from DGA Corporate Communications before making one.
+
+## Using this system
+
+- **Websites.** Load `components/bundle.css` (it imports Prompt and Sarabun) after `tokens.css`, then use the `dga-` classes: NavBar, Button, SectionHeader, NewsCard, ServiceTile, Badge, StatBlock and Footer.
+- **Articles.** Wrap the body in `.dga-prose`; add `Callout` blocks for key facts and pull quotes.
+- **Presentations.** Build from the SlideTitle, SlideContent and SlideSection layouts. Use a light theme for working decks and the dark (navy) theme for keynotes. Keep to one orange accent per slide.
+</pre></div></section>
+<section id="colors"><h2>Colors <small>themes: light, dark</small></h2><div class="grid"><div class="tok"><div class="sws"><div class="sw" style="background:#ffffff" title="light"></div><div class="sw" style="background:#150f36" title="dark"></div></div><div><code>surface</code><small>#ffffff / #150f36</small><p>Page and slide background. Dark theme is a deep DGA navy, not black.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#fafafa" title="light"></div><div class="sw" style="background:#1e154c" title="dark"></div></div><div><code>surface-subtle</code><small>#fafafa / #1e154c</small><p>Alternating page bands, sidebars, table stripes.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#f2f1f1" title="light"></div><div class="sw" style="background:#2a2160" title="dark"></div></div><div><code>surface-muted</code><small>#f2f1f1 / #2a2160</small><p>Input fills, image placeholders, quiet panels. ink-muted does NOT reach 4.5:1 here in light theme; use ink-secondary.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#1e154c" title="light"></div><div class="sw" style="background:#edebf5" title="dark"></div></div><div><code>ink</code><small>#1e154c / #edebf5</small><p>Primary text and headings on surface, surface-subtle and surface-muted. In light theme it is DGA navy, the site's main text colour.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#444444" title="light"></div><div class="sw" style="background:#b9b4d6" title="dark"></div></div><div><code>ink-secondary</code><small>#444444 / #b9b4d6</small><p>Body copy in dense UI and article paragraphs, on surface and surface-subtle.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#707070" title="light"></div><div class="sw" style="background:#a39dc8" title="dark"></div></div><div><code>ink-muted</code><small>#707070 / #a39dc8</small><p>Dates, captions, metadata; on surface and surface-subtle only (4.95:1 / 6.38:1).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#dcdcdc" title="light"></div><div class="sw" style="background:#3a3170" title="dark"></div></div><div><code>line</code><small>#dcdcdc / #3a3170</small><p>Hairline dividers and card outlines (decorative, not meaning-bearing).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#c1c1c1" title="light"></div><div class="sw" style="background:#6e66a6" title="dark"></div></div><div><code>line-strong</code><small>#c1c1c1 / #6e66a6</small><p>Control borders (source value). Light #c1c1c1 is 1.8:1 on white, below the 3:1 floor for control borders: kept exact from dga.or.th; pair inputs with a label and the focus ring.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#1e154c" title="light"></div><div class="sw" style="background:#1e154c" title="dark"></div></div><div><code>navy</code><small>#1e154c / #1e154c</small><p>DGA navy (the 'A' of the logo). Footer, hero bands, cover and section-divider slides. Same in both themes.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#ffffff" title="light"></div><div class="sw" style="background:#ffffff" title="dark"></div></div><div><code>on-navy</code><small>#ffffff / #ffffff</small><p>Text and icons on a navy fill (16.6:1).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#f05223" title="light"></div><div class="sw" style="background:#f05223" title="dark"></div></div><div><code>orange</code><small>#f05223 / #f05223</small><p>DGA orange, the brand colour (logo 'DG'). Fills, large headings 24px+ (3.54:1 on white), graphics, and text on navy (4.69:1). Never small body text on white.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#da3c0c" title="light"></div><div class="sw" style="background:#ff7a4d" title="dark"></div></div><div><code>orange-strong</code><small>#da3c0c / #ff7a4d</small><p>Primary buttons, links, active nav text, focus ring. Text on surface (4.53:1 light / 7.06:1 dark).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#ffffff" title="light"></div><div class="sw" style="background:#150f36" title="dark"></div></div><div><code>on-orange</code><small>#ffffff / #150f36</small><p>Label on an orange-strong fill (4.53:1 light / 7.06:1 dark).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#fff5f0" title="light"></div><div class="sw" style="background:#3b1a14" title="dark"></div></div><div><code>orange-soft</code><small>#fff5f0 / #3b1a14</small><p>Tint behind active nav items and highlighted rows. Source pairs orange-strong text here at 4.22:1 (below 4.5:1 for 14.72px nav text): kept exact; bold 19px+ passes.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:var(--orange-strong)" title="light"></div><div class="sw" style="background:var(--orange-strong)" title="dark"></div></div><div><code>focus</code><small>{orange-strong} / {orange-strong}</small><p>Focus ring: 2px solid, 2px offset. 4.53:1 on white, 7.06:1 on dark surface.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:var(--orange-strong)" title="light"></div><div class="sw" style="background:var(--orange-strong)" title="dark"></div></div><div><code>link</code><small>{orange-strong} / {orange-strong}</small><p>Inline links and 'อ่านต่อ' read-more links.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#2e7d32" title="light"></div><div class="sw" style="background:#6bcb77" title="dark"></div></div><div><code>success</code><small>#2e7d32 / #6bcb77</small><p>Completed / on-track status. Always with a word or icon, never colour alone.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#b45309" title="light"></div><div class="sw" style="background:#f2b14c" title="dark"></div></div><div><code>warning</code><small>#b45309 / #f2b14c</small><p>At-risk / pending status. Always with a word or icon.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#b42318" title="light"></div><div class="sw" style="background:#ff8a80" title="dark"></div></div><div><code>danger</code><small>#b42318 / #ff8a80</small><p>Error / off-track. Keep visibly distinct from brand orange by pairing with an icon and the word.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#1d6fb8" title="light"></div><div class="sw" style="background:#6fa8ff" title="dark"></div></div><div><code>info</code><small>#1d6fb8 / #6fa8ff</small><p>Informational notices and neutral status.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#1e154c" title="light"></div><div class="sw" style="background:#b9b4d6" title="dark"></div></div><div><code>chart-1</code><small>#1e154c / #b9b4d6</small><p>First data series (navy). Charts in decks and reports.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#f05223" title="light"></div><div class="sw" style="background:#f05223" title="dark"></div></div><div><code>chart-2</code><small>#f05223 / #f05223</small><p>Second data series / the highlighted series (orange).</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#8a84b8" title="light"></div><div class="sw" style="background:#8a84b8" title="dark"></div></div><div><code>chart-3</code><small>#8a84b8 / #8a84b8</small><p>Third series (navy tint). 3.46:1 on white, 5.27:1 on dark: fine for marks, label it directly.</p></div></div>
+<div class="tok"><div class="sws"><div class="sw" style="background:#c1c1c1" title="light"></div><div class="sw" style="background:#3a3170" title="dark"></div></div><div><code>chart-muted</code><small>#c1c1c1 / #3a3170</small><p>'Other' / baseline / comparison bars. Carries no meaning on its own.</p></div></div></div></section>
+<section id="type"><h2>Typography</h2><h3>Web <small>family sans</small></h3>
+<div class="ty"><div class="display">รัฐบาลดิจิทัล เพื่อทุกคน</div><small><code>.display</code> 56px/64px 600 Hero headline, one per page.</small></div>
+<div class="ty"><div class="h1">Digital Government in Action</div><small><code>.h1</code> 40px/52px 600 Page title.</small></div>
+<div class="ty"><div class="section-title">Digital Government in Action</div><small><code>.section-title</code> 32px/32px 600 Home-page section headings in orange, exactly as dga.or.th. Line height 1.0 is for ONE line only; wrap to h2 metrics if it breaks.</small></div>
+<div class="ty"><div class="h2">Policy &amp; Regulation</div><small><code>.h2</code> 32px/44px 600 Multi-line section headings.</small></div>
+<div class="ty"><div class="h3">Open Government Data</div><small><code>.h3</code> 24px/34px 600 Card and sub-section titles.</small></div>
+<div class="ty"><div class="h4">มติคณะรัฐมนตรีด้านรัฐบาลดิจิทัล</div><small><code>.h4</code> 20px/30px 500 News-card titles, small headings.</small></div>
+<div class="ty"><div class="body">ประชาชนไม่ต้องถ่ายสำเนา เชื่อมข้อมูล 58 เอกสารสำคัญผ่าน GDX</div><small><code>.body</code> 16px/24px 400 Default UI and web copy (site value).</small></div>
+<div class="ty"><div class="nav">หน้าแรก  เกี่ยวกับเรา  บริการ</div><small><code>.nav</code> 14.72px/19.872px 500 Main navigation items (site value).</small></div>
+<div class="ty"><div class="label">อ่านต่อ</div><small><code>.label</code> 14px/20px 500 Buttons, tags, form labels.</small></div>
+<div class="ty"><div class="caption">Digital Government Development Plan</div><small><code>.caption</code> 12px/18px 400 Dates, captions, footnotes (site value).</small></div>
+<h3>Article <small>family reading</small></h3>
+<div class="ty"><div class="article-lead">เมื่อรัฐออกแบบบริการให้ประชาชนไม่ต้องหาคำตอบเอง</div><small><code>.article-lead</code> 21px/34px 400 Standfirst under an article title.</small></div>
+<div class="ty"><div class="article-body">ทางรัฐ แอปฯ ดี ตอบโจทย์ทุกช่วงวัย ในแอปฯ เดียว บริการภาครัฐที่เชื่อมถึงกันเพื่อประชาชน</div><small><code>.article-body</code> 18px/32px 400 Long-form reading text in Sarabun. Max line length ~70 characters (680px).</small></div>
+<div class="ty"><div class="article-quote">ข้อมูลถึงกัน เอกสารไม่ซ้ำ</div><small><code>.article-quote</code> 24px/38px 500 Pull quotes, in Prompt.</small></div>
+<h3>Slides <small>family sans</small></h3>
+<div class="ty"><div class="slide-hero">Digital Government in Action</div><small><code>.slide-hero</code> 72px/84px 600 Title slide headline at 1920x1080.</small></div>
+<div class="ty"><div class="slide-title">One Stop Service ใกล้ขึ้น</div><small><code>.slide-title</code> 48px/62px 600 Content-slide title at 1920x1080.</small></div>
+<div class="ty"><div class="slide-subtitle">ความคืบหน้าไตรมาส 3</div><small><code>.slide-subtitle</code> 30px/44px 400 Subtitles and kicker lines.</small></div>
+<div class="ty"><div class="slide-body">เชื่อมข้อมูล 58 เอกสารสำคัญผ่าน GDX</div><small><code>.slide-body</code> 26px/40px 400 Bullets and body on slides. Never below 24px.</small></div>
+<div class="ty"><div class="slide-stat">17</div><small><code>.slide-stat</code> 120px/120px 700 One big number per slide (e.g. Waseda ranking).</small></div></section>
+<section id="spacing"><h2>Spacing</h2><div class="grid"><div class="tok"><div class="demo demo-spacing" style="--v:4px"></div><div><code>space-1</code><small>4px</small><p>Icon-to-text gaps.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:8px"></div><div><code>space-2</code><small>8px</small><p>Tight stacks: tag padding, meta rows.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:12px"></div><div><code>space-3</code><small>12px</small><p>Button vertical padding, list gaps.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:16px"></div><div><code>space-4</code><small>16px</small><p>Nav item vertical padding (site), card inner gaps.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:20px"></div><div><code>space-5</code><small>20px</small><p>Nav item horizontal padding (site), button horizontal padding.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:24px"></div><div><code>space-6</code><small>24px</small><p>Card padding, grid gutters.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:32px"></div><div><code>space-8</code><small>32px</small><p>Between blocks inside a section.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:48px"></div><div><code>space-12</code><small>48px</small><p>Section padding on mobile; slide margin minimum.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:64px"></div><div><code>space-16</code><small>64px</small><p>Section padding on desktop.</p></div></div>
+<div class="tok"><div class="demo demo-spacing" style="--v:96px"></div><div><code>space-24</code><small>96px</small><p>Hero padding; slide outer margin at 1920x1080.</p></div></div></div>
+<h2>Radius</h2><div class="grid"><div class="tok"><div class="demo demo-radius" style="--v:6px"></div><div><code>radius-sm</code><small>6px</small><p>Buttons, inputs, tags (site value).</p></div></div>
+<div class="tok"><div class="demo demo-radius" style="--v:12px"></div><div><code>radius-md</code><small>12px</small><p>Cards, images, panels (the site's most common radius).</p></div></div>
+<div class="tok"><div class="demo demo-radius" style="--v:20px"></div><div><code>radius-lg</code><small>20px</small><p>Hero media, feature panels.</p></div></div>
+<div class="tok"><div class="demo demo-radius" style="--v:100px"></div><div><code>radius-pill</code><small>100px</small><p>Pills and chips (site value).</p></div></div>
+<div class="tok"><div class="demo demo-radius" style="--v:50%"></div><div><code>radius-round</code><small>50%</small><p>Circular icon buttons (carousel arrows, back-to-top).</p></div></div></div><h2>Shadows</h2><div class="grid"><div class="tok"><div class="demo demo-shadow" style="--v:0 2px 8px 0 rgba(0,0,0,0.06)"></div><div><code>shadow-sm</code><small>{'light': '0 2px 8px 0 rgba(0,0,0,0.06)', 'dark': '0 2px 8px 0 rgba(0,0,0,0.3)'}</small><p>Sticky header, small raised controls.</p></div></div>
+<div class="tok"><div class="demo demo-shadow" style="--v:0 16px 24px 0 rgba(73,104,126,0.16)"></div><div><code>shadow-card</code><small>{'light': '0 16px 24px 0 rgba(73,104,126,0.16)', 'dark': '0 16px 24px 0 rgba(0,0,0,0.4)'}</small><p>News and service cards (site value).</p></div></div>
+<div class="tok"><div class="demo demo-shadow" style="--v:0 8px 32px 0 rgba(0,0,0,0.18)"></div><div><code>shadow-overlay</code><small>{'light': '0 8px 32px 0 rgba(0,0,0,0.18)', 'dark': '0 8px 32px 0 rgba(0,0,0,0.5)'}</small><p>Menus, dialogs, popovers.</p></div></div>
+<div class="tok"><div class="demo demo-shadow" style="--v:0 4px 16px 0 rgba(218,60,12,0.4)"></div><div><code>shadow-cta</code><small>{'light': '0 4px 16px 0 rgba(218,60,12,0.4)', 'dark': '0 4px 16px 0 rgba(0,0,0,0.5)'}</small><p>Hover on the primary orange button only.</p></div></div></div></section>
+<section id="components"><h2>Components</h2><h3>Articles</h3>
+<div class="card"><div class="card-h"><b>ArticleBody</b> <span>`.dga-prose` is the long-form reading layout for articles, blog posts and news bodies: one 680px column, Sarabun body text and Prompt headings.</span></div><iframe data-src="components/ArticleBody/preview.html" height="560" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>Callout</b> <span>A callout sets a key fact or summary box inside an article.</span></div><iframe data-src="components/Callout/preview.html" height="330" loading="lazy"></iframe></div>
+<h3>Content</h3>
+<div class="card"><div class="card-h"><b>Badge</b> <span>A badge is a small pill label for a content category (ข่าว, บทความ, มาตรฐาน) or the status of a project.</span></div><iframe data-src="components/Badge/preview.html" height="90" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>NewsCard</b> <span>The news and article card from the dga.or.th home page is a 16:9 image, a category badge, a title clamped to three lines, a Thai-calendar date and a "อ่านต่อ →" link.</span></div><iframe data-src="components/NewsCard/preview.html" height="430" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>ServiceTile</b> <span>A service tile is an entry point to a major area (Policy &amp; Regulation, Standard, มติคณะรัฐมนตรี, Open Government Data, Citizen Portal), laid out three across as on the home page.</span></div><iframe data-src="components/ServiceTile/preview.html" height="280" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>StatBlock</b> <span>A stat block shows one headline number with its meaning and source, for reports, web highlights and deck summaries.</span></div><iframe data-src="components/StatBlock/preview.html" height="170" loading="lazy"></iframe></div>
+<h3>Actions</h3>
+<div class="card"><div class="card-h"><b>Button</b> <span>Use a button to start an action or go to the next step, with at most one **primary** (orange) button per view.</span></div><iframe data-src="components/Button/preview.html" height="150" loading="lazy"></iframe></div>
+<h3>Cover</h3>
+<div class="card"><div class="card-h"><b>Cover</b> <span></span></div><iframe data-src="components/Cover/preview.html" height="288" loading="lazy"></iframe></div>
+<h3>Layout</h3>
+<div class="card"><div class="card-h"><b>Footer</b> <span>The site footer is a full-width `navy` band with the logo on a white plate, contact details and link columns with orange headings.</span></div><iframe data-src="components/Footer/preview.html" height="330" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>NavBar</b> <span>The site header is a white bar with the DGA logo on the left, the main menu on the right and `shadow-sm` beneath.</span></div><iframe data-src="components/NavBar/preview.html" height="110" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>SectionHeader</b> <span>This is the home-page section heading from dga.or.th: an optional small navy kicker, a 32px orange title and a "ดูทั้งหมด" link on the right.</span></div><iframe data-src="components/SectionHeader/preview.html" height="120" loading="lazy"></iframe></div>
+<h3>Slides</h3>
+<div class="card"><div class="card-h"><b>SlideContent</b> <span>The workhorse content slide has a kicker, a title that states the takeaway, 3–5 bullets and an optional big number or chart on the right, with a footer line and the logo at bottom-right.</span></div><iframe data-src="components/SlideContent/preview.html" height="540" style="width:960px;max-width:100%" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>SlideSection</b> <span>The section divider is a full `orange` slide with a large navy section number and title, used between the parts of a long deck.</span></div><iframe data-src="components/SlideSection/preview.html" height="540" style="width:960px;max-width:100%" loading="lazy"></iframe></div>
+<div class="card"><div class="card-h"><b>SlideTitle</b> <span>The title slide for decks is authored at 1920×1080 on a `navy` ground, with an orange kicker, a white `slide-hero` headline, a subtitle, brand colour blocks at top-right and the logo on a white plate.</span></div><iframe data-src="components/SlideTitle/preview.html" height="540" style="width:960px;max-width:100%" loading="lazy"></iframe></div></section>
+<section id="assets"><h2>Assets</h2><p><b>Logos</b></p><div class="tok"><img src="assets/Logos/dga-logo.webp" style="max-height:96px;background:#fff;padding:8px"><div><code>dga-logo.webp</code><small>image/webp 4702 bytes</small></div></div></section>
+</main>
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme'), themes=["light", "dark"];
+  function load(){document.querySelectorAll('iframe[data-src]').forEach(function(f){f.src=f.dataset.src+'?theme='+root.dataset.theme;});}
+  btn.onclick=function(){var i=themes.indexOf(root.dataset.theme);root.dataset.theme=themes[(i+1)%themes.length];btn.textContent='theme: '+root.dataset.theme;load();};
+  load();
+  var el=document.getElementById('readme');
+  if(window.marked){el.innerHTML=marked.parse(el.firstChild.textContent);}
+})();
+</script>
+</body>
+</html>

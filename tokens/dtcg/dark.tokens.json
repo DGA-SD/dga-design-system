@@ -1,0 +1,143 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "surface": {
+      "$type": "color",
+      "$value": "#150f36"
+    },
+    "surface-subtle": {
+      "$type": "color",
+      "$value": "#1e154c"
+    },
+    "surface-muted": {
+      "$type": "color",
+      "$value": "#2a2160"
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "#edebf5"
+    },
+    "ink-secondary": {
+      "$type": "color",
+      "$value": "#b9b4d6"
+    },
+    "ink-muted": {
+      "$type": "color",
+      "$value": "#a39dc8"
+    },
+    "line": {
+      "$type": "color",
+      "$value": "#3a3170"
+    },
+    "line-strong": {
+      "$type": "color",
+      "$value": "#6e66a6"
+    },
+    "navy": {
+      "$type": "color",
+      "$value": "#1e154c"
+    },
+    "on-navy": {
+      "$type": "color",
+      "$value": "#ffffff"
+    },
+    "orange": {
+      "$type": "color",
+      "$value": "#f05223"
+    },
+    "orange-strong": {
+      "$type": "color",
+      "$value": "#ff7a4d"
+    },
+    "on-orange": {
+      "$type": "color",
+      "$value": "#150f36"
+    },
+    "orange-soft": {
+      "$type": "color",
+      "$value": "#3b1a14"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{color.orange-strong}"
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{color.orange-strong}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "#6bcb77"
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "#f2b14c"
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "#ff8a80"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "#6fa8ff"
+    },
+    "chart-1": {
+      "$type": "color",
+      "$value": "#b9b4d6"
+    },
+    "chart-2": {
+      "$type": "color",
+      "$value": "#f05223"
+    },
+    "chart-3": {
+      "$type": "color",
+      "$value": "#8a84b8"
+    },
+    "chart-muted": {
+      "$type": "color",
+      "$value": "#3a3170"
+    }
+  },
+  "shadow": {
+    "shadow-sm": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.3)",
+        "offsetX": "0px",
+        "offsetY": "2px",
+        "blur": "8px",
+        "spread": "0px"
+      }
+    },
+    "shadow-card": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.4)",
+        "offsetX": "0px",
+        "offsetY": "16px",
+        "blur": "24px",
+        "spread": "0px"
+      }
+    },
+    "shadow-overlay": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.5)",
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "32px",
+        "spread": "0px"
+      }
+    },
+    "shadow-cta": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.5)",
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "16px",
+        "spread": "0px"
+      }
+    }
+  }
+}

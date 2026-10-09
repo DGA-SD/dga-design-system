@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* DGA components — CSS only. Load after tokens.css. Every value is a token. */
+.dga, .dga * { box-sizing: border-box; }
+.dga { font-family: var(--font-sans); color: var(--ink); background: var(--surface); font-size: 16px; line-height: 24px; }
+:where(.dga) a { color: var(--link); }
+:where(.dga) :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Button */
+.dga-btn { display: inline-flex; align-items: center; gap: var(--space-2); font: 500 14px/20px var(--font-sans); padding: var(--space-3) var(--space-5); border-radius: var(--radius-sm); border: 1.5px solid transparent; cursor: pointer; text-decoration: none; transition: box-shadow .15s, background-color .15s; }
+.dga-btn--primary { background: var(--orange-strong); color: var(--on-orange); border-color: var(--orange-strong); }
+.dga-btn--primary:hover { box-shadow: var(--shadow-cta); }
+.dga-btn--secondary { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.dga-btn--secondary:hover { background: var(--surface-subtle); }
+.dga-btn--on-navy { background: var(--surface); color: var(--navy); border-color: var(--surface); }
+.dga-btn--link { background: none; border: 0; padding: 0; color: var(--link); }
+.dga-btn--link:hover { text-decoration: underline; }
+.dga-btn--icon { width: 44px; height: 44px; padding: 0; justify-content: center; border-radius: var(--radius-round); background: var(--orange-strong); color: var(--on-orange); border: 0; }
+.dga-btn[disabled] { opacity: .4; box-shadow: none; cursor: not-allowed; }
+.dga-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* Badge / tag */
+.dga-badge { display: inline-flex; align-items: center; gap: var(--space-1); font: 500 12px/18px var(--font-sans); padding: 2px var(--space-2); border-radius: var(--radius-pill); background: var(--orange-soft); color: var(--ink); }
+.dga-badge--navy { background: var(--navy); color: var(--on-navy); }
+.dga-badge--success { background: var(--surface-subtle); color: var(--success); box-shadow: inset 0 0 0 1px var(--success); }
+.dga-badge--warning { background: var(--surface-subtle); color: var(--warning); box-shadow: inset 0 0 0 1px var(--warning); }
+.dga-badge--danger { background: var(--surface-subtle); color: var(--danger); box-shadow: inset 0 0 0 1px var(--danger); }
+.dga-badge--info { background: var(--surface-subtle); color: var(--info); box-shadow: inset 0 0 0 1px var(--info); }
+
+/* Section header */
+.dga-section-header { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+.dga-section-header__title { margin: 0; font: 600 32px/32px var(--font-sans); color: var(--orange); }
+.dga-section-header__kicker { display: block; font: 400 12px/18px var(--font-sans); color: var(--ink); margin-bottom: var(--space-2); letter-spacing: .02em; }
+.dga-section-header--wrap .dga-section-header__title { line-height: 44px; }
+
+/* Nav bar */
+.dga-nav { display: flex; align-items: center; gap: var(--space-6); padding: 0 var(--space-6); background: var(--surface); box-shadow: var(--shadow-sm); min-height: 72px; }
+.dga-nav__logo { height: 48px; width: auto; display: block; }
+.dga-nav__items { display: flex; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.dga-nav__item { font: 500 14.72px/19.872px var(--font-sans); color: var(--ink); padding: var(--space-4) var(--space-5); text-decoration: none; display: block; }
+.dga-nav__item:hover { color: var(--orange-strong); }
+.dga-nav__item[aria-current="page"] { background: var(--orange-soft); color: var(--orange-strong); }
+
+/* News card */
+.dga-card { display: flex; flex-direction: column; background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-card); overflow: hidden; }
+.dga-card__media { aspect-ratio: 16 / 9; background: var(--surface-muted); object-fit: cover; width: 100%; display: block; }
+.dga-card__body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); flex: 1; }
+.dga-card__meta { font: 400 12px/18px var(--font-sans); color: var(--ink-muted); }
+.dga-card__title { margin: 0; font: 500 20px/30px var(--font-sans); color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.dga-card__more { margin-top: auto; padding-top: var(--space-2); font: 500 14px/20px var(--font-sans); color: var(--link); text-decoration: none; }
+
+/* Service tile */
+.dga-tile { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--space-8) var(--space-6); border-radius: var(--radius-md); background: var(--surface-subtle); color: var(--ink); text-decoration: none; }
+.dga-tile__icon { width: 48px; height: 48px; border-radius: var(--radius-round); background: var(--orange); display: grid; place-items: center; }
+.dga-tile__icon svg { width: 24px; height: 24px; fill: var(--on-navy); }
+.dga-tile__title { margin: 0; font: 600 24px/34px var(--font-sans); }
+.dga-tile__text { margin: 0; color: var(--ink-secondary); }
+.dga-tile:hover { box-shadow: var(--shadow-card); background: var(--surface); }
+
+/* Stat block */
+.dga-stat { display: flex; flex-direction: column; gap: var(--space-1); }
+.dga-stat__value { font: 700 56px/64px var(--font-sans); color: var(--orange); letter-spacing: -.01em; }
+.dga-stat__label { font: 400 16px/24px var(--font-sans); color: var(--ink-secondary); max-width: 24ch; }
+.dga-stat__source { font: 400 12px/18px var(--font-sans); color: var(--ink-muted); }
+
+/* Callout (articles) */
+.dga-callout { padding: var(--space-6); border-radius: var(--radius-md); background: var(--orange-soft); color: var(--ink); }
+.dga-callout__title { margin: 0 0 var(--space-2); font: 600 20px/30px var(--font-sans); }
+.dga-callout--navy { background: var(--navy); color: var(--on-navy); }
+.dga-callout--navy .dga-callout__title { color: var(--orange); }
+.dga-quote { margin: var(--space-8) 0; padding: 0; font: 500 24px/38px var(--font-sans); color: var(--ink); }
+.dga-quote::before { content: ""; display: block; width: 48px; height: 4px; border-radius: var(--radius-pill); background: var(--orange); margin-bottom: var(--space-4); }
+.dga-quote cite { display: block; margin-top: var(--space-3); font: 400 14px/20px var(--font-sans); font-style: normal; color: var(--ink-muted); }
+
+/* Article prose */
+.dga-prose { max-width: 680px; margin: 0 auto; font: 400 18px/32px var(--font-reading); color: var(--ink-secondary); }
+.dga-prose h1 { font: 600 40px/52px var(--font-sans); color: var(--ink); margin: 0 0 var(--space-4); }
+.dga-prose h2 { font: 600 28px/40px var(--font-sans); color: var(--ink); margin: var(--space-12) 0 var(--space-3); }
+.dga-prose h3 { font: 600 22px/32px var(--font-sans); color: var(--ink); margin: var(--space-8) 0 var(--space-2); }
+.dga-prose .lead { font: 400 21px/34px var(--font-reading); color: var(--ink); margin: 0 0 var(--space-8); }
+.dga-prose p { margin: 0 0 var(--space-5); }
+.dga-prose a { color: var(--link); text-underline-offset: 3px; }
+.dga-prose ul, .dga-prose ol { padding-left: var(--space-6); margin: 0 0 var(--space-5); }
+.dga-prose li::marker { color: var(--orange); }
+.dga-prose img, .dga-prose figure img { width: 100%; border-radius: var(--radius-md); display: block; }
+.dga-prose figcaption { font: 400 12px/18px var(--font-sans); color: var(--ink-muted); margin-top: var(--space-2); }
+.dga-prose .byline { font: 400 14px/20px var(--font-sans); color: var(--ink-muted); margin-bottom: var(--space-6); }
+
+/* Footer */
+.dga-footer { background: var(--navy); color: var(--on-navy); padding: var(--space-12) var(--space-6) var(--space-6); font: 400 14px/22px var(--font-sans); }
+.dga-footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-8); }
+.dga-footer__heading { font: 600 16px/24px var(--font-sans); color: var(--orange); margin: 0 0 var(--space-3); }
+.dga-footer a { color: var(--on-navy); text-decoration: none; }
+.dga-footer a:hover { text-decoration: underline; }
+.dga-footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-2); }
+.dga-footer__plate { display: inline-block; background: var(--on-navy); padding: var(--space-3); border-radius: var(--radius-md); margin-bottom: var(--space-4); }
+.dga-footer__plate img { height: 48px; display: block; }
+.dga-footer__legal { margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--chart-3); font-size: 12px; line-height: 18px; }
+
+/* Slides — authored at 1920x1080; scale the .dga-slide box to fit. */
+.dga-slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--surface); color: var(--ink); font-family: var(--font-sans); padding: var(--space-24); }
+.dga-slide--navy { background: var(--navy); color: var(--on-navy); }
+.dga-slide__kicker { font: 500 30px/44px var(--font-sans); color: var(--orange-strong); margin: 0 0 var(--space-4); }
+.dga-slide--navy .dga-slide__kicker { color: var(--orange); }
+.dga-slide__hero { font: 600 72px/84px var(--font-sans); margin: 0; max-width: 1300px; }
+.dga-slide__title { font: 600 48px/62px var(--font-sans); margin: 0 0 var(--space-12); max-width: 1500px; }
+.dga-slide__subtitle { font: 400 30px/44px var(--font-sans); margin: var(--space-6) 0 0; color: var(--ink-secondary); }
+.dga-slide--navy .dga-slide__subtitle { color: var(--on-navy); opacity: .85; }
+.dga-slide__body { font: 400 26px/40px var(--font-sans); color: var(--ink-secondary); }
+.dga-slide__body ul { margin: 0; padding-left: 1.1em; display: grid; gap: var(--space-5); }
+.dga-slide__body li::marker { color: var(--orange); }
+.dga-slide__stat { font: 700 120px/120px var(--font-sans); color: var(--orange); }
+.dga-slide__logo { position: absolute; right: var(--space-24); bottom: var(--space-12); height: 56px; }
+.dga-slide__plate { position: absolute; right: var(--space-24); bottom: var(--space-12); background: var(--on-navy); padding: var(--space-4); border-radius: var(--radius-md); }
+.dga-slide__plate img { height: 72px; display: block; }
+.dga-slide__footer { position: absolute; left: var(--space-24); bottom: var(--space-12); font: 400 20px/28px var(--font-sans); color: var(--ink-muted); }
+
+/* The logo's navy "A" disappears on dark grounds: give it a white plate there. */
+[data-theme="dark"] .dga-slide__logo, .dga-slide--navy .dga-slide__logo,
+[data-theme="dark"] .dga-nav__logo { background: var(--on-navy); padding: var(--space-2); border-radius: var(--radius-sm); box-sizing: content-box; }

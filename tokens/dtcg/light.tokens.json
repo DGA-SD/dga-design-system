@@ -1,0 +1,171 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "color": {
+    "surface": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Page and slide background. Dark theme is a deep DGA navy, not black."
+    },
+    "surface-subtle": {
+      "$type": "color",
+      "$value": "#fafafa",
+      "$description": "Alternating page bands, sidebars, table stripes."
+    },
+    "surface-muted": {
+      "$type": "color",
+      "$value": "#f2f1f1",
+      "$description": "Input fills, image placeholders, quiet panels. ink-muted does NOT reach 4.5:1 here in light theme; use ink-secondary."
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "#1e154c",
+      "$description": "Primary text and headings on surface, surface-subtle and surface-muted. In light theme it is DGA navy, the site's main text colour."
+    },
+    "ink-secondary": {
+      "$type": "color",
+      "$value": "#444444",
+      "$description": "Body copy in dense UI and article paragraphs, on surface and surface-subtle."
+    },
+    "ink-muted": {
+      "$type": "color",
+      "$value": "#707070",
+      "$description": "Dates, captions, metadata; on surface and surface-subtle only (4.95:1 / 6.38:1)."
+    },
+    "line": {
+      "$type": "color",
+      "$value": "#dcdcdc",
+      "$description": "Hairline dividers and card outlines (decorative, not meaning-bearing)."
+    },
+    "line-strong": {
+      "$type": "color",
+      "$value": "#c1c1c1",
+      "$description": "Control borders (source value). Light #c1c1c1 is 1.8:1 on white, below the 3:1 floor for control borders: kept exact from dga.or.th; pair inputs with a label and the focus ring."
+    },
+    "navy": {
+      "$type": "color",
+      "$value": "#1e154c",
+      "$description": "DGA navy (the 'A' of the logo). Footer, hero bands, cover and section-divider slides. Same in both themes."
+    },
+    "on-navy": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Text and icons on a navy fill (16.6:1)."
+    },
+    "orange": {
+      "$type": "color",
+      "$value": "#f05223",
+      "$description": "DGA orange, the brand colour (logo 'DG'). Fills, large headings 24px+ (3.54:1 on white), graphics, and text on navy (4.69:1). Never small body text on white."
+    },
+    "orange-strong": {
+      "$type": "color",
+      "$value": "#da3c0c",
+      "$description": "Primary buttons, links, active nav text, focus ring. Text on surface (4.53:1 light / 7.06:1 dark)."
+    },
+    "on-orange": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Label on an orange-strong fill (4.53:1 light / 7.06:1 dark)."
+    },
+    "orange-soft": {
+      "$type": "color",
+      "$value": "#fff5f0",
+      "$description": "Tint behind active nav items and highlighted rows. Source pairs orange-strong text here at 4.22:1 (below 4.5:1 for 14.72px nav text): kept exact; bold 19px+ passes."
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{color.orange-strong}",
+      "$description": "Focus ring: 2px solid, 2px offset. 4.53:1 on white, 7.06:1 on dark surface."
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{color.orange-strong}",
+      "$description": "Inline links and 'อ่านต่อ' read-more links."
+    },
+    "success": {
+      "$type": "color",
+      "$value": "#2e7d32",
+      "$description": "Completed / on-track status. Always with a word or icon, never colour alone."
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "#b45309",
+      "$description": "At-risk / pending status. Always with a word or icon."
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "#b42318",
+      "$description": "Error / off-track. Keep visibly distinct from brand orange by pairing with an icon and the word."
+    },
+    "info": {
+      "$type": "color",
+      "$value": "#1d6fb8",
+      "$description": "Informational notices and neutral status."
+    },
+    "chart-1": {
+      "$type": "color",
+      "$value": "#1e154c",
+      "$description": "First data series (navy). Charts in decks and reports."
+    },
+    "chart-2": {
+      "$type": "color",
+      "$value": "#f05223",
+      "$description": "Second data series / the highlighted series (orange)."
+    },
+    "chart-3": {
+      "$type": "color",
+      "$value": "#8a84b8",
+      "$description": "Third series (navy tint). 3.46:1 on white, 5.27:1 on dark: fine for marks, label it directly."
+    },
+    "chart-muted": {
+      "$type": "color",
+      "$value": "#c1c1c1",
+      "$description": "'Other' / baseline / comparison bars. Carries no meaning on its own."
+    }
+  },
+  "shadow": {
+    "shadow-sm": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.06)",
+        "offsetX": "0px",
+        "offsetY": "2px",
+        "blur": "8px",
+        "spread": "0px"
+      },
+      "$description": "Sticky header, small raised controls."
+    },
+    "shadow-card": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(73,104,126,0.16)",
+        "offsetX": "0px",
+        "offsetY": "16px",
+        "blur": "24px",
+        "spread": "0px"
+      },
+      "$description": "News and service cards (site value)."
+    },
+    "shadow-overlay": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0,0,0,0.18)",
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "32px",
+        "spread": "0px"
+      },
+      "$description": "Menus, dialogs, popovers."
+    },
+    "shadow-cta": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(218,60,12,0.4)",
+        "offsetX": "0px",
+        "offsetY": "4px",
+        "blur": "16px",
+        "spread": "0px"
+      },
+      "$description": "Hover on the primary orange button only."
+    }
+  }
+}
