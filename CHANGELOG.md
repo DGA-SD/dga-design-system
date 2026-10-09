@@ -2,6 +2,12 @@
 
 รูปแบบตาม Keep a Changelog และ Semantic Versioning
 
+## [Unreleased]
+
+### เปลี่ยน
+
+- ยืนยันฟอนต์แล้ว: Prompt (เว็บ สไลด์) และ Sarabun (บทความยาว) ตาม design system นี้ (ฝ่าย SD 2026-10-09) ปรับ SOURCE.md และ README.md ให้ตรง
+
 ## [1.0.0] - 2026-10-09
 
 เวอร์ชันแรก นำเข้าจาก claude.ai Design System artifact ที่สกัดจาก dga.or.th (ดู SOURCE.md)
@@ -18,6 +24,6 @@
 - `AGENTS.md` สำหรับ AI coding agent
 - สคริปต์ generate ใน `tools/`
 
-### ยังไม่ยืนยัน
+### ยังไม่ยืนยัน (ณ วันออก 1.0.0)
 
 - ฟอนต์หลัก (Prompt หรือ Anuphan) และค่าสีส้ม/กรมท่าที่ต่างกันระหว่าง dga.or.th กับ standard.dga.or.th ดู SOURCE.md
